@@ -7,7 +7,7 @@ function createBarsCss(days) {
     styles += `
     & > span:nth-child(${i + 1}) {
         & > div > div {
-          height: ${Math.random() * 100}%;
+          height: ${Math.random() * 96 + 5}%;
         }
       }
        `;
