@@ -5,7 +5,7 @@ export const StyledGeography = styled.div`
 
   > div {
     width: fit-content;
-    text-align: left;
+    text-align: center;
     color: rgb(90, 90, 110);
   }
 
