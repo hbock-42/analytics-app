@@ -5,8 +5,7 @@ export const StyledGeography = styled.div`
 
   > div {
     width: fit-content;
-    text-align: center;
-    font: 19px "Abel", sans-serif;
+    text-align: left;
     color: rgb(90, 90, 110);
   }
 

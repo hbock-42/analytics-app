@@ -5,7 +5,7 @@ import { StyledLearning } from "./styled-learning";
 const Learning = () => {
   var bars = [];
   const barsNumbers = [];
-  const days = 10;
+  const days = 7;
 
   for (let i = 0; i < days; i++) {
     bars.push(
@@ -25,7 +25,7 @@ const Learning = () => {
   }
 
   return (
-    <StyledLearning width="100%" height="400px" days={days}>
+    <StyledLearning width="100%" height="100%" days={days}>
       <div className="container">
         <div className="header">
           <h2>Learning dynamics</h2>
@@ -37,10 +37,10 @@ const Learning = () => {
         <div className="learningChart">
           <div className="horizontal">
             <div className="numbers">
-              <p>100th</p>
-              <p>75th</p>
-              <p>50th</p>
-              <p>0th</p>
+              <p>100h</p>
+              <p>75h</p>
+              <p>50h</p>
+              <p>0h</p>
             </div>
             <div className="lines">
               <div></div>

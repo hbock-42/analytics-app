@@ -19,8 +19,8 @@ function createBarsCss(days) {
 }
 
 export const StyledLearning = styled.div`
-  width: ${props => props.width};
-  height: ${props => props.height};
+  /* width: ${props => props.width};
+  height: ${props => props.height}; */
   font-family: "Abel", sans-serif;
   color: rgb(90, 90, 110);
 

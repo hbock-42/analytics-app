@@ -1,12 +1,10 @@
 import React from "react";
-import Geography from "../geography/geography";
-import Learning from "../learning/learning";
+import AnalyticBoard from "../analytic-bord/analytic-board";
 import { GlobalStyle } from "./global-style";
 
 const App = () => (
   <>
-    {/* <Geography /> */}
-    <Learning />
+    <AnalyticBoard />
     <GlobalStyle />
   </>
 );
