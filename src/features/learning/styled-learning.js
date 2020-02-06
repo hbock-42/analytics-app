@@ -1,13 +1,13 @@
 import styled, { css } from "styled-components";
 
-function createBarsCss(days) {
+function createBarsCss(fillPercents) {
   let styles = "";
 
-  for (let i = 0; i < days; i += 1) {
+  for (let i = 0; i < fillPercents.length; i += 1) {
     styles += `
     & > span:nth-child(${i + 1}) {
         & > div > div {
-          height: ${Math.random() * 96 + 5}%;
+          height: ${Math.max(8, fillPercents[i])}%;
         }
       }
        `;
@@ -19,8 +19,6 @@ function createBarsCss(days) {
 }
 
 export const StyledLearning = styled.div`
-  /* width: ${props => props.width};
-  height: ${props => props.height}; */
   font-family: "Abel", sans-serif;
   color: rgb(90, 90, 110);
 
@@ -42,6 +40,7 @@ export const StyledLearning = styled.div`
     h2 {
       margin-bottom: 40px;
       color: rgb(40, 45, 60);
+      text-align: left !important;
     }
 
     .dotElement {
@@ -138,7 +137,7 @@ export const StyledLearning = styled.div`
           }
         }
 
-        ${props => createBarsCss(props.days)};
+        ${props => createBarsCss(props.fillPercents)};
       }
 
       .numbers {
@@ -152,12 +151,38 @@ export const StyledLearning = styled.div`
     }
   }
 
+  .barChild {
+    position: relative;
+
+    :hover {
+      .barHover {
+        display: block;
+      }
+    }
+
+    .barHover {
+      display: none;
+      position: absolute;
+      padding: 2px 7px;
+      background-color: rgb(237, 232, 253);
+      border-radius: 3px;
+      left: 50%;
+      top: -4px;
+      transform: translate(-50%, -100%);
+      border: 1px rgb(100, 100, 100, 0.07) solid;
+
+      p {
+        font-size: 13px;
+      }
+    }
+  }
+
   .example-appear {
     height: 0 !important;
   }
 
   .example-appear.example-appear-active {
     height: 100% !important;
-    transition: height 0.5s ease-in;
+    transition: height 0.8s cubic-bezier(0.88, 0.07, 0.32, 0.84);
   }
 `;

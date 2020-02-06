@@ -1,6 +1,7 @@
 import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
+
   body {
     margin: 0;
     padding: 0;
@@ -9,6 +10,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   * {
+    font-family: "Abel", sans-serif;
     margin: 0;
     box-sizing: border-box;
   }

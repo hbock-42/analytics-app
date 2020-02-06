@@ -4,20 +4,27 @@ import { StyledLearning } from "./styled-learning";
 
 const Learning = () => {
   var bars = [];
+  const barsFillPercent = [];
   const barsNumbers = [];
   const days = 7;
 
   for (let i = 0; i < days; i++) {
+    barsFillPercent.push(parseInt(Math.random() * 96 + 5));
     bars.push(
       <ReactCSSTransitionGroup
+        key={i + "barsTGroup"}
         transitionName="example"
         transitionAppear={true}
-        transitionAppearTimeout={500}
+        transitionAppearTimeout={800}
         transitionEnter={false}
         transitionLeave={false}
       >
         <div key={i + "bars"}>
-          <div key={i + "barsChild"}></div>
+          <div key={i + "barsChild"} className="barChild">
+            <div key={i + "barsHover"} className="barHover">
+              <p>{barsFillPercent[i]}</p>
+            </div>
+          </div>
         </div>
       </ReactCSSTransitionGroup>
     );
@@ -25,7 +32,7 @@ const Learning = () => {
   }
 
   return (
-    <StyledLearning width="100%" height="100%" days={days}>
+    <StyledLearning width="100%" height="100%" fillPercents={barsFillPercent}>
       <div className="container">
         <div className="header">
           <h2>Learning dynamics</h2>

@@ -4,6 +4,7 @@ import { GlobalStyle } from "./global-style";
 
 const App = () => (
   <>
+    {/* <InfoCard /> */}
     <AnalyticBoard />
     <GlobalStyle />
   </>
