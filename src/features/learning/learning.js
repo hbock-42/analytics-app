@@ -13,7 +13,7 @@ const Learning = () => {
     bars.push(
       <ReactCSSTransitionGroup
         key={i + "barsTGroup"}
-        transitionName="example"
+        transitionName="barGrow"
         transitionAppear={true}
         transitionAppearTimeout={800}
         transitionEnter={false}
@@ -21,9 +21,18 @@ const Learning = () => {
       >
         <div key={i + "bars"}>
           <div key={i + "barsChild"} className="barChild">
-            <div key={i + "barsHover"} className="barHover">
-              <p>{barsFillPercent[i]}</p>
-            </div>
+            <ReactCSSTransitionGroup
+              key={i + "barsHoverTransition"}
+              transitionName="barHoverIn"
+              transitionAppear={true}
+              transitionAppearTimeout={1200}
+              transitionEnter={false}
+              transitionLeave={false}
+            >
+              <div key={i + "barsHover"} className="barHover">
+                <p>{barsFillPercent[i]}</p>
+              </div>
+            </ReactCSSTransitionGroup>
           </div>
         </div>
       </ReactCSSTransitionGroup>

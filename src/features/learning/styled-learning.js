@@ -156,12 +156,17 @@ export const StyledLearning = styled.div`
 
     :hover {
       .barHover {
-        display: block;
+        visibility: visible;
+        opacity: 1;
       }
     }
 
     .barHover {
-      display: none;
+      opacity: 0;
+      visibility: hidden;
+      transition: visibility 0s,
+        opacity 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+
       position: absolute;
       padding: 2px 7px;
       background-color: rgb(237, 232, 253);
@@ -177,12 +182,25 @@ export const StyledLearning = styled.div`
     }
   }
 
-  .example-appear {
+  .barGrow-appear {
     height: 0 !important;
   }
 
-  .example-appear.example-appear-active {
+  .barGrow-appear.barGrow-appear-active {
     height: 100% !important;
     transition: height 0.8s cubic-bezier(0.88, 0.07, 0.32, 0.84);
+  }
+
+  .barHoverIn-appear {
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+
+  .barHoverIn-appear.barHoverIn-appear-active {
+    opacity: 0 !important;
+
+    transition: visibility 0s,
+      opacity 0.6s cubic-bezier(0.895, 0.03, 0.685, 0.22);
+    transition-delay: 0.6s;
   }
 `;
