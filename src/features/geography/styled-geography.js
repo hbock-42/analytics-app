@@ -52,6 +52,7 @@ export const StyledGeography = styled.div`
 
     p {
       font-size: 15px;
+      text-align: center !important;
     }
 
     & > * {
@@ -63,5 +64,19 @@ export const StyledGeography = styled.div`
         background-color: blue;
       }
     }
+  }
+
+  .centralText-appear {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+
+  .centralText-appear.centralText-appear-active {
+    transform: scale(1);
+    opacity: 1;
+    /* transition: transform 0.8s cubic-bezier(0.88, 0.07, 0.32, 0.84); */
+    transition-property: transform, opacity;
+    transition-duration: 0.8s;
+    transition-timing-function: cubic-bezier(0.88, 0.07, 0.32, 0.84);
   }
 `;
