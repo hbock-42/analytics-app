@@ -198,7 +198,6 @@ export const StyledLearning = styled.div`
 
   .barHoverIn-appear.barHoverIn-appear-active {
     opacity: 0 !important;
-
     transition: visibility 0s,
       opacity 0.6s cubic-bezier(0.895, 0.03, 0.685, 0.22);
     transition-delay: 0.6s;
