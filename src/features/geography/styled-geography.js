@@ -78,4 +78,31 @@ export const StyledGeography = styled.div`
     transition-duration: 0.8s;
     transition-timing-function: cubic-bezier(0.88, 0.07, 0.32, 0.84);
   }
+
+  .shadow-appear {
+    .circularChart {
+      box-shadow: inset 0px 3px 10px rgba(0, 0, 0, 0);
+      & > div {
+        box-shadow: 0px 3px 10px rgba(0, 0, 0, 0);
+      }
+    }
+  }
+
+  .shadow-appear.shadow-appear-active {
+    .circularChart {
+      box-shadow: inset 0px 3px 10px rgba(0, 0, 0, 0.7);
+      transition-property: box-shadow;
+      transition-duration: 1s;
+      /* transition-delay: 0.4s; */
+      transition-timing-function: cubic-bezier(0.88, 0.07, 0.32, 0.84);
+
+      & > div {
+        box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.7);
+        transition-property: box-shadow;
+        transition-duration: 1s;
+        /* transition-delay: 0.4s; */
+        transition-timing-function: cubic-bezier(0.88, 0.07, 0.32, 0.84);
+      }
+    }
+  }
 `;
