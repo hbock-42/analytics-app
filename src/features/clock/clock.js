@@ -38,20 +38,23 @@ class Clock extends React.Component {
         ref={this.componentRef}
         containerSize={this.state.componentSize}
         mainColor=""
+        hours={this.state.date.getHours()}
+        minutes={this.state.date.getMinutes()}
+        seconds={this.state.date.getSeconds()}
       >
         <div className="container">
           <div className="outer-circle"></div>
+          <div className="inner-circle"></div>
           <div className="time-marks">
             <div></div>
             <div></div>
             <div></div>
             <div></div>
           </div>
-          <div className="inner-circle"></div>
           <div className="clock-hands">
-            <div className="hours"></div>
-            <div className="minutes"></div>
             <div className="seconds"></div>
+            <div className="minutes"></div>
+            <div className="hours"></div>
           </div>
         </div>
 
