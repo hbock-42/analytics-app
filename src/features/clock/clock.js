@@ -43,22 +43,21 @@ class Clock extends React.Component {
         seconds={this.state.date.getSeconds()}
       >
         <div className="container">
-          <div className="outer-circle"></div>
-          <div className="inner-circle"></div>
-          <div className="time-marks">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
+          <div className="outer-circle">
+            <div className="time-marks">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
           </div>
+          <div className="inner-circle"></div>
           <div className="clock-hands">
             <div className="seconds"></div>
             <div className="minutes"></div>
             <div className="hours"></div>
           </div>
         </div>
-
-        {/* <p>{this.state.date.toLocaleTimeString()}</p> */}
       </StyledClock>
     );
   }
