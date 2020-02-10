@@ -37,14 +37,19 @@ export const StyledHome = styled.div`
     background-color: #443b8f;
     box-shadow: 10px 4px 30px rgba(0, 0, 0, 0.4);
 
-    transition: box-shadow 0.2s, transform 0.2s;
+    transition: box-shadow 0.2s, transform 0.2s, border-radius 0.2s;
 
     :hover {
       box-shadow: 15px 7px 40px rgba(0, 0, 0, 0.7);
-      transform: scale(1.1);
+      border-radius: 60px;
+      transform: scale(1.3);
+      & > * {
+        transform: scale(1.2);
+      }
     }
 
     & > * {
+      transition: transform 0.2s;
       align-self: center;
       text-align: center;
     }
