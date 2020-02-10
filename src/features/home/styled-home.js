@@ -42,9 +42,9 @@ export const StyledHome = styled.div`
     :hover {
       box-shadow: 15px 7px 40px rgba(0, 0, 0, 0.7);
       border-radius: 60px;
-      transform: scale(1.3);
+      transform: scale(1.2);
       & > * {
-        transform: scale(1.2);
+        transform: scale(1.1);
       }
     }
 
