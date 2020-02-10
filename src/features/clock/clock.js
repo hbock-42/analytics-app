@@ -5,7 +5,8 @@ class Clock extends React.Component {
   constructor(props) {
     super(props);
     this.componentRef = React.createRef();
-    this.state = { date: new Date(), componentSize: 0 };
+    this.state = { date: new Date(), componentSize: 0, darkTheme: false };
+    this.switchTheme = this.switchTheme.bind(this);
   }
 
   componentDidMount() {
@@ -32,15 +33,22 @@ class Clock extends React.Component {
     );
   }
 
+  switchTheme() {
+    this.setState({
+      darkTheme: !this.state.darkTheme
+    });
+  }
+
   render() {
     return (
       <StyledClock
         ref={this.componentRef}
         containerSize={this.state.componentSize}
-        mainColor=""
+        mainColor={this.state.darkTheme ? "dark" : ""}
         hours={this.state.date.getHours()}
         minutes={this.state.date.getMinutes()}
         seconds={this.state.date.getSeconds()}
+        onClick={this.switchTheme}
       >
         <div className="container">
           <div className="outer-circle">

@@ -15,9 +15,9 @@ function timeBarCss(numberOfBars) {
     style += `& > *:nth-child(${i + 1}) {
         top: ${((Math.sin((-i / numberOfBars) * 2 * Math.PI) + 1) / 2) * 100}%;
         left: ${((Math.cos((-i / numberOfBars) * 2 * Math.PI) + 1) / 2) * 100}%;
-        transform: translateX(-50%) rotateZ(${(-i / numberOfBars + 0.25) *
-          2 *
-          Math.PI}rad);
+        transform: translateX(${-Math.abs(
+          Math.cos((-i / numberOfBars) * 2 * Math.PI)
+        ) * 50}%) rotateZ(${(-i / numberOfBars + 0.25) * 2 * Math.PI}rad);
     }`;
   }
   return style;
@@ -182,7 +182,7 @@ export const StyledClock = styled.div`
 
     & > div {
       width: 10px;
-      height: 7%;
+      height: 6%;
       transform-origin: 50% 0;
       position: absolute;
       background-color: var(--time-color);
