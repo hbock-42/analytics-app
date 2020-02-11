@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const StyledLoadingPostComponent = styled.div`
-  --color-block: rgb(170, 170, 180);
+  --color-block: rgb(210, 210, 220);
   .container {
     display: flex;
     flex-direction: column;
@@ -12,8 +12,7 @@ export const StyledLoadingPostComponent = styled.div`
     padding: 15px;
 
     & > * {
-      margin: 10px;
-      flex-grow: 1;
+      margin: 15px;
     }
   }
 
@@ -45,13 +44,13 @@ export const StyledLoadingPostComponent = styled.div`
   }
 
   .content {
-    flex-grow: 3;
+    flex-grow: 1;
 
     background-color: var(--color-block);
   }
 
   .salary {
-    flex-grow: 3;
+    flex-grow: 1;
 
     background-color: var(--color-block);
   }
