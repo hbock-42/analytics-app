@@ -1,12 +1,14 @@
 import React from "react";
 import { usePostFetch } from "./usePostFetch";
 import { StyledPostComponent } from "./styled-post-component";
+import LoadingPostComponent from "./loading-post-component";
 
 const PostComponent = ({ postId }) => {
   // todo: replace 1 by postId
   const [state, loading, error] = usePostFetch(1);
   if (error) return <div>an error happened</div>;
-  if (loading) return <div>Loading ...</div>;
+  if (true) return <LoadingPostComponent />;
+  if (loading) return <LoadingPostComponent />;
   return (
     <StyledPostComponent>
       <div className="container">

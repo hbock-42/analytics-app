@@ -6,7 +6,7 @@ export const StyledPostComponent = styled.div`
     flex-direction: column;
     background-color: white;
     border-radius: 8px;
-    /* padding: 15px; */
+    padding: 15px;
 
     & > * {
       margin: 15px;
@@ -41,4 +41,6 @@ export const StyledPostComponent = styled.div`
       }
     }
   }
+
+  /* style when loading */
 `;
