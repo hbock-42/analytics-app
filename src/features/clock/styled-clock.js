@@ -24,9 +24,6 @@ function timeBarCss(numberOfBars) {
 }
 
 export const StyledClock = styled.div`
-  /* creation values */
-  /* width: 400px;
-  height: 300px; */
   height: 800px;
   width: 100%;
 
@@ -108,6 +105,8 @@ export const StyledClock = styled.div`
 
   background-color: var(--main-color);
 
+  transition: background-color 0.4s;
+
   display: flex;
   justify-content: center;
 
@@ -127,6 +126,7 @@ export const StyledClock = styled.div`
     width: 90%;
     height: 90%;
     box-shadow: var(--shadow-outer);
+    transition: box-shadow 0.4s;
   }
 
   .inner-circle {
@@ -137,6 +137,7 @@ export const StyledClock = styled.div`
     width: 46%;
     height: 46%;
     box-shadow: var(--shadow-inner);
+    transition: box-shadow 0.4s;
   }
 
   .clock-hands {
@@ -145,6 +146,7 @@ export const StyledClock = styled.div`
     width: 100%;
 
     & > div {
+      transition: background-color 0.4s;
       width: 10px;
       border-radius: 5px;
       position: absolute;

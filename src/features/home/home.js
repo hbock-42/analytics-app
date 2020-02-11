@@ -16,6 +16,9 @@ const Home = () => {
           <Link className="menu-item" to="/clock">
             <p>Clock</p>
           </Link>
+          <Link className="menu-item" to="/post">
+            <p>post</p>
+          </Link>
         </div>
       </div>
     </StyledHome>
