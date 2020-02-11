@@ -7,7 +7,6 @@ const PostComponent = ({ postId }) => {
   // todo: replace 1 by postId
   const [state, loading, error] = usePostFetch(1);
   if (error) return <div>an error happened</div>;
-  if (true) return <LoadingPostComponent />;
   if (loading) return <LoadingPostComponent />;
   return (
     <StyledPostComponent>

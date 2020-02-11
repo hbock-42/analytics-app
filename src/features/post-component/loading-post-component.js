@@ -5,14 +5,14 @@ const LoadingPostComponent = () => (
   <StyledLoadingPostComponent>
     <div className="container">
       <div className="header">
-        <div className="image"></div>
+        <div className="image element"></div>
         <div className="title-right">
-          <div className="title"></div>
-          <div className="sub-title"></div>
+          <div className="title element"></div>
+          <div className="sub-title element"></div>
         </div>
       </div>
-      <div className="content"></div>
-      <div className="salary"></div>
+      <div className="content element"></div>
+      <div className="salary element"></div>
     </div>
   </StyledLoadingPostComponent>
 );

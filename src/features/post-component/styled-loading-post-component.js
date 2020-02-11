@@ -22,7 +22,6 @@ export const StyledLoadingPostComponent = styled.div`
     .image {
       height: 60px;
       width: 60px;
-      background-color: var(--color-block);
     }
 
     .title-right {
@@ -34,7 +33,6 @@ export const StyledLoadingPostComponent = styled.div`
 
       * {
         flex-grow: 1;
-        background-color: var(--color-block);
       }
 
       .title {
@@ -45,13 +43,31 @@ export const StyledLoadingPostComponent = styled.div`
 
   .content {
     flex-grow: 1;
-
-    background-color: var(--color-block);
   }
 
   .salary {
     flex-grow: 1;
+  }
 
+  .element {
     background-color: var(--color-block);
+
+    animation-name: load;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    transform-origin: 0 0;
+  }
+
+  @keyframes load {
+    0% {
+      transform: scaleX(0);
+    }
+    40% {
+      transform: scaleX(1);
+    }
+    100% {
+      transform: scaleX(1);
+    }
   }
 `;
