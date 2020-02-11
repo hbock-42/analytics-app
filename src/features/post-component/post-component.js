@@ -4,8 +4,7 @@ import { StyledPostComponent } from "./styled-post-component";
 import LoadingPostComponent from "./loading-post-component";
 
 const PostComponent = ({ postId }) => {
-  // todo: replace 1 by postId
-  const [state, loading, error] = usePostFetch(1);
+  const [state, loading, error] = usePostFetch(postId);
   if (error) return <div>an error happened</div>;
   if (loading) return <LoadingPostComponent />;
   return (

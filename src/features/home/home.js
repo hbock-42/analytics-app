@@ -16,8 +16,8 @@ const Home = () => {
           <Link className="menu-item" to="/clock">
             <p>Clock</p>
           </Link>
-          <Link className="menu-item" to="/post">
-            <p>post</p>
+          <Link className="menu-item" to="/posts">
+            <p>Posts</p>
           </Link>
         </div>
       </div>

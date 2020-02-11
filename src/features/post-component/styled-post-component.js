@@ -41,6 +41,4 @@ export const StyledPostComponent = styled.div`
       }
     }
   }
-
-  /* style when loading */
 `;
