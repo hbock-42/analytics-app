@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 function hoursToDeg(hours) {
   return (((1.0 * hours) % 12) / 12.0) * 360.0 + "deg";
