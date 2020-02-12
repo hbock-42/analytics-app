@@ -2,9 +2,9 @@ import React, { useRef } from "react";
 import { usePostFetch } from "./usePostFetch";
 import { StyledPostComponent } from "./styled-post-component";
 import LoadingPostComponent from "./loading-post-component";
+import Comments from "./comments";
 
 const PostComponent = ({ postId }) => {
-  const container = useRef();
   const expandable = useRef();
 
   const [state, loading, error] = usePostFetch(postId);
@@ -30,7 +30,6 @@ const PostComponent = ({ postId }) => {
     <StyledPostComponent>
       <div
         className="container"
-        ref={container}
         onMouseEnter={() => expandSection(expandable)}
         onMouseLeave={() => collapseSection(expandable)}
       >
@@ -54,11 +53,9 @@ const PostComponent = ({ postId }) => {
           <p className="limit-2lines upper-first">{state.content}</p>
         </div>
         <div className="hidden-comments" ref={expandable}>
-          qundwqi unqw iunqwd iuqwnd iuqwn dqiwn dqiwnd qiwudn qiwjund qiwudn
-          qiwjdn qwijnd . qwiujnd ijnd nqiw duinqw iuqnw iquwdn qwiund qwiud
-          nqwiu dnqwiud nqwid unqw duiqwnd iquwn diuqwnd iquwnd iqwund qiwud
-          nqwiun dqiwudn qwiud nqwiud nqiwu ndqiwund qwun diqwund iqwun dqiwund
-          qiwun dqwiu ndqwiud nqwu dnqwi unqw iunqw iun
+          <div className="comments">
+            <Comments postId={postId} />
+          </div>
         </div>
         <h4 className="salary text-ellipsis">
           ${state.salary} - ${state.salary + 10000} a year
@@ -70,13 +67,9 @@ const PostComponent = ({ postId }) => {
 
 export default PostComponent;
 
-// This is the important part!
-
 function collapseSection(element) {
   // get the height of the element's inner content, regardless of its actual size
   var sectionHeight = element.current.scrollHeight;
-  var marginTop = element.current.style.marginTop;
-  var marginBottom = element.current.style.marginBottom;
 
   // temporarily disable all css transitions
   var elementTransition = element.current.style.transition;

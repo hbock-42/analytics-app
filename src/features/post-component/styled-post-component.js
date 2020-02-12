@@ -7,6 +7,7 @@ export const StyledPostComponent = styled.div`
     background-color: white;
     border-radius: 8px;
     padding: 15px;
+    color: rgb(90, 90, 90);
 
     & > * {
       margin: 15px;
