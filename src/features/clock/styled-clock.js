@@ -11,7 +11,6 @@ function minutesOrSecondsToDeg(minOrSec) {
 function timeBarCss(numberOfBars) {
   var style = "";
   for (let i = 0; i < numberOfBars; i++) {
-    console.log(((Math.sin((-i / numberOfBars) * 2 * Math.PI) + 1) / 2) * 100);
     style += `& > *:nth-child(${i + 1}) {
         top: ${((Math.sin((-i / numberOfBars) * 2 * Math.PI) + 1) / 2) * 100}%;
         left: ${((Math.cos((-i / numberOfBars) * 2 * Math.PI) + 1) / 2) * 100}%;
