@@ -5,6 +5,7 @@ import AnalyticBoard from "./features/analytic-bord/analytic-board";
 import Clock from "./features/clock/clock";
 import Home from "./features/home/home";
 import Posts from "./features/posts/posts.js";
+import MenuShortcut from "./features/menu-shortcut/menu-shortcut";
 import { GlobalStyle } from "./features/app/global-style";
 import * as serviceWorker from "./serviceWorker";
 
@@ -18,6 +19,7 @@ const routing = (
       <Route component={Home} />
     </Switch>
     <GlobalStyle />
+    <MenuShortcut />
   </Router>
 );
 

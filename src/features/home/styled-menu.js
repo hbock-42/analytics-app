@@ -1,19 +1,12 @@
 import styled from "styled-components";
 
-export const StyledHome = styled.div`
-  height: 100vh;
-
-  /* * {
+export const StyledMenu = styled.div`
+  * {
     text-decoration: none;
     color: #f6a61e;
-  } */
+  }
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #f6a61e;
-
-  /* .menu {
+  .menu {
     display: flex;
     flex-wrap: wrap;
     width: fit-content;
@@ -53,5 +46,5 @@ export const StyledHome = styled.div`
       align-self: center;
       text-align: center;
     }
-  } */
+  }
 `;
