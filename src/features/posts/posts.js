@@ -2,7 +2,12 @@ import React from "react";
 import PostComponent from "../post-component/post-component";
 import { StyledPosts } from "./styled-posts";
 const Posts = () => {
-  const ids = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
+  const ids = [];
+
+  for (let i = 0; i < 30; i++) {
+    ids.push(Math.floor(Math.random() * 99 + 1));
+  }
+
   return (
     <StyledPosts>
       <div className="posts-container">
