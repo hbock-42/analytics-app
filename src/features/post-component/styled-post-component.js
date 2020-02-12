@@ -41,4 +41,12 @@ export const StyledPostComponent = styled.div`
       }
     }
   }
+
+  .hidden-comments {
+    margin-top: 0;
+    margin-bottom: 0;
+    overflow: hidden;
+    transition: height 0.3s ease-out, margin 0.3s ease-out;
+    height: 0;
+  }
 `;
