@@ -20,7 +20,8 @@ const PostComponent = ({ postId }) => {
     "twitter",
     "apple"
   ];
-  const iconId = state.iconId % businessIcons.length;
+  const iconId =
+    state.iconId === undefined ? 0 : state.iconId % businessIcons.length;
   // console.log(state.iconId);
   // console.log(iconId);
   // console.log("../../assets/images/forum/" + businessIcons[iconId] + ".png");

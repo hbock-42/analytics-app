@@ -28,6 +28,7 @@ export const usePostFetch = postId => {
 
   useEffect(() => {
     if (localStorage[postId + "/post"]) {
+      setState(JSON.parse(localStorage[postId + "/post"]));
       setLoading(false);
     } else {
       fetchData();
@@ -36,8 +37,10 @@ export const usePostFetch = postId => {
   }, [fetchData, postId]);
 
   useEffect(() => {
-    localStorage.setItem(postId + "/post", JSON.stringify(state));
-  }, [postId, state]);
+    if (!error) {
+      localStorage.setItem(postId + "/post", JSON.stringify(state));
+    }
+  }, [postId, state, error]);
 
   return [state, loading, error];
 };
