@@ -15,7 +15,6 @@ export const usePostFetch = postId => {
       const result = await (await fetch(endPoint)).json();
 
       setState({
-        ...result,
         title: result.title,
         content: result.body,
         salary: postId * 1000 + 30000,
@@ -26,9 +25,19 @@ export const usePostFetch = postId => {
     }
     setLoading(false);
   }, [postId]);
+
   useEffect(() => {
-    fetchData();
-    setState({});
+    if (localStorage[postId + "/post"]) {
+      setLoading(false);
+    } else {
+      fetchData();
+    }
+    // setState({});
   }, [fetchData, postId]);
+
+  useEffect(() => {
+    localStorage.setItem(postId + "/post", JSON.stringify(state));
+  }, [postId, state]);
+
   return [state, loading, error];
 };

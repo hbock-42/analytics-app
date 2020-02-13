@@ -12,11 +12,9 @@ export const UseFetchComments = postId => {
 
     try {
       const endPoint = `${API_URL}posts/${postId}/comments`;
-      console.log(endPoint);
       const result = await (await fetch(endPoint)).json();
 
       setState({
-        ...result,
         comments: result.map(comment => {
           return {
             from: comment.email
@@ -33,9 +31,19 @@ export const UseFetchComments = postId => {
     }
     setLoading(false);
   }, [postId]);
+
   useEffect(() => {
-    fetchData();
-    setState({});
+    if (localStorage[postId + "/comments"]) {
+      setState(JSON.parse(localStorage[postId + "/comments"]));
+    } else {
+      fetchData();
+    }
+    // setState({});
   }, [fetchData, postId]);
+
+  useEffect(() => {
+    localStorage.setItem(postId + "/comments", JSON.stringify(state));
+  }, [postId, state]);
+
   return [state, loading, error];
 };

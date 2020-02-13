@@ -6,7 +6,7 @@ import { StyledComments } from "./styled-comments";
 const Comments = ({ postId }) => {
   const [state, loading, error] = UseFetchComments(postId);
   if (error) return <div>an error happened</div>;
-  if (loading) return <div> LOADINGIFGNIGNGING</div>;
+  if (loading) return <div className="loader">Loading...</div>;
 
   return (
     <StyledComments>
