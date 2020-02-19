@@ -18,7 +18,7 @@ export const usePostFetch = postId => {
         title: result.title,
         content: result.body,
         iconId: Math.floor(Math.random() * 100),
-        minSalary: result.min_salary
+        minSalary: result.minSalary
       });
     } catch (error) {
       setError(error);
