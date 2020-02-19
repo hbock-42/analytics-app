@@ -2,7 +2,7 @@ In the project directory, you can run:
 
 ### `npm start`
 
-o launch the project
+launch the project
 
 ---
 

@@ -14,7 +14,6 @@ export const usePostFetch = postId => {
       const endPoint = `${API_URL}posts/${postId}`;
       const result = await (await fetch(endPoint)).json();
 
-      console.log(result.min_salary);
       setState({
         title: result.title,
         content: result.body,
