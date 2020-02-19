@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const StyledAnalyticBoard = styled.div`
-  /* height: 450px; */
   height: fit-content;
   width: fit-content;
 

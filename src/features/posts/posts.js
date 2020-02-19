@@ -4,7 +4,7 @@ import { StyledPosts } from "./styled-posts";
 const Posts = () => {
   const ids = [];
 
-  for (let i = 0; i < 4; i++) {
+  for (let i = 0; i < 40; i++) {
     ids.push(Math.floor(Math.random() * 99 + 1));
   }
 
