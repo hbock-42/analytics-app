@@ -58,7 +58,7 @@ const PostComponent = ({ postId }) => {
           </div>
         </div>
         <h4 className="salary text-ellipsis">
-          ${state.salary} - ${state.salary + 10000} a year
+          ${state.minSalary} - ${state.minSalary + 10000} a year
         </h4>
       </div>
     </StyledPostComponent>

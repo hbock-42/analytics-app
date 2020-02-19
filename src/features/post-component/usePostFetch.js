@@ -14,11 +14,12 @@ export const usePostFetch = postId => {
       const endPoint = `${API_URL}posts/${postId}`;
       const result = await (await fetch(endPoint)).json();
 
+      console.log(result.min_salary);
       setState({
         title: result.title,
         content: result.body,
-        salary: postId * 1000 + 30000,
-        iconId: Math.floor(Math.random() * 100)
+        iconId: Math.floor(Math.random() * 100),
+        minSalary: result.min_salary
       });
     } catch (error) {
       setError(error);
