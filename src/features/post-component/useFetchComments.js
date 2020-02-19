@@ -35,17 +35,21 @@ export const UseFetchComments = postId => {
   useEffect(() => {
     if (localStorage[postId + "/comments"]) {
       setState(JSON.parse(localStorage[postId + "/comments"]));
+      setLoading(false);
     } else {
       fetchData();
     }
-    // setState({});
   }, [fetchData, postId]);
 
   useEffect(() => {
-    if (!error) {
+    if (!error && !IsEmpty(state)) {
       localStorage.setItem(postId + "/comments", JSON.stringify(state));
     }
   }, [postId, state, error]);
 
   return [state, loading, error];
 };
+
+function IsEmpty(object) {
+  return Object.entries(object).length === 0 && object.constructor === Object;
+}

@@ -33,14 +33,17 @@ export const usePostFetch = postId => {
     } else {
       fetchData();
     }
-    // setState({});
   }, [fetchData, postId]);
 
   useEffect(() => {
-    if (!error) {
+    if (!error && !IsEmpty(state)) {
       localStorage.setItem(postId + "/post", JSON.stringify(state));
     }
   }, [postId, state, error]);
 
   return [state, loading, error];
 };
+
+function IsEmpty(object) {
+  return Object.entries(object).length === 0 && object.constructor === Object;
+}
