@@ -46,7 +46,7 @@ export const StyledItemViewer = styled.div`
     overflow: hidden;
 
     .item {
-      transition: transform 1s;
+      transition: transform 1s, opacity 1s cubic-bezier(0.62, 0.02, 0.34, 0.99);
     }
 
     .selected-item {
@@ -57,6 +57,7 @@ export const StyledItemViewer = styled.div`
       left: -9999px;
       right: -9999px;
       margin: auto;
+      opacity: 1;
       height: 70%;
     }
     .left-item {
@@ -67,6 +68,7 @@ export const StyledItemViewer = styled.div`
       right: -9999px;
       margin: auto;
       height: 70%;
+      opacity: 0;
       transform: translateX(-80%) scale(0.3);
     }
     .right-item {
@@ -77,11 +79,47 @@ export const StyledItemViewer = styled.div`
       right: -9999px;
       margin: auto;
       height: 70%;
+      opacity: 0;
       transform: translateX(80%) scale(0.3);
     }
 
     .hidden-item {
       display: none;
+    }
+  }
+
+  .page-selector {
+    position: absolute;
+    width: 95%;
+    bottom: 5%;
+    left: 5%;
+
+    display: flex;
+    align-items: center;
+
+    & > * {
+      margin-right: 7px;
+    }
+
+    .black-bar {
+      background-color: black;
+      height: 1px;
+      width: 20%;
+      margin-right: 12px;
+    }
+
+    .page-number {
+      font-size: 12px;
+      user-select: none;
+      transition: transform 1s;
+    }
+
+    .page-number-selected {
+      transform: scale(2);
+    }
+
+    .button-div {
+      padding: 4px;
     }
   }
 `;

@@ -31,16 +31,41 @@ const ItemViewer = () => {
               className={classNames(
                 "item",
                 { "selected-item": i === currentId },
-                { "left-item": i === currentId - 1 },
-                { "right-item": i === currentId + 1 },
-                { "hidden-item": i < currentId - 1 || i > currentId + 1 }
+                // { "left-item": i === currentId - 1 },
+                // { "right-item": i === currentId + 1 },
+                // { "hidden-item": i < currentId - 1 || i > currentId + 1 }
+                { "left-item": i < currentId },
+                { "right-item": i > currentId }
               )}
               src={item}
               alt="chair"
             />
           ))}
         </div>
-        <div className="page-selector"></div>
+        <div className="page-selector">
+          <div className="black-bar" />
+          {chairImages.map((item, i) => (
+            <div
+              className="button-div"
+              key={i}
+              onClick={event =>
+                setCurrentId(
+                  parseInt(event.currentTarget.firstChild.textContent) - 1
+                )
+              }
+            >
+              <p
+                className={classNames("page-number", {
+                  "page-number-selected": i === currentId
+                })}
+                src={item}
+                alt="chair"
+              >
+                {i < 9 ? "0" + (i + 1) : i + 1}
+              </p>
+            </div>
+          ))}
+        </div>
         <div className="social-media"></div>
         <div className="onTop">
           <button
@@ -62,7 +87,5 @@ const ItemViewer = () => {
     </StyledItemViewer>
   );
 };
-
-// const renderImages
 
 export default ItemViewer;
