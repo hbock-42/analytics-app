@@ -3,7 +3,7 @@ import { createStore, combineReducers, applyMiddleware } from "redux";
 import logger from "redux-logger";
 import { Provider } from "react-redux";
 import Routing from "../router";
-import furnitureReducer from "./reducers/furniture-reducer";
+import furnitureReducer from "../features/furniture-store/reducer/furniture-reducer";
 
 const store = createStore(
   combineReducers({ furniture: furnitureReducer }),

@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const StyledMenuShortcut = styled.div`
   .element-menu-shortcut {
+    z-index: 10;
     display: flex;
 
     top: 0;
@@ -9,8 +10,6 @@ export const StyledMenuShortcut = styled.div`
     position: fixed;
     width: 70px;
     height: 70px;
-    /* background-color: #f6a61e; */
-    /* background-color: rgb(246, 166, 30, 0.2); */
     background-color: rgba(150, 150, 150, 0.6);
     backdrop-filter: blur(4px);
     border-radius: 0 0 100% 0;

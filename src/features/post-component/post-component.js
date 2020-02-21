@@ -22,9 +22,6 @@ const PostComponent = ({ postId }) => {
   ];
   const iconId =
     state.iconId === undefined ? 0 : state.iconId % businessIcons.length;
-  for (let i = 0; i < businessIcons.length; i++) {
-    require("../../assets/images/forum/" + businessIcons[i] + ".png");
-  }
 
   return (
     <StyledPostComponent>
