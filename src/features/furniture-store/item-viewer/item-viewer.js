@@ -67,22 +67,6 @@ const ItemViewer = () => {
           ))}
         </div>
         <div className="social-media"></div>
-        <div className="onTop">
-          <button
-            onClick={() => setCurrentId(currentId > 0 ? currentId - 1 : 0)}
-          >
-            -
-          </button>
-          <button
-            onClick={() =>
-              setCurrentId(
-                currentId < chairImages.length - 1 ? currentId + 1 : currentId
-              )
-            }
-          >
-            +
-          </button>
-        </div>
       </div>
     </StyledItemViewer>
   );

@@ -3,12 +3,6 @@ import styled from "styled-components";
 export const StyledItemViewer = styled.div`
   /* debug values */
   width: 50%;
-  /* background-color: red; */
-
-  .onTop {
-    z-index: 5;
-    position: absolute;
-  }
 
   /* real value */
   background-color: white;
