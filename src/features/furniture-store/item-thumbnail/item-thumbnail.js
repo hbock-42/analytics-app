@@ -1,9 +1,8 @@
-import React, { useRef, useEffect } from "react";
+import React from "react";
 import { StyledItemThumbnail } from "./styled-item-thumbnail";
 import { useSelector, useDispatch } from "react-redux";
 
 const ItemThumbnail = ({ chairs }) => {
-  const imgRef = useRef();
   const modelId = useSelector(state => state.furniture.modelId);
   const dispatch = useDispatch();
 
@@ -28,15 +27,8 @@ const ItemThumbnail = ({ chairs }) => {
           >
             <img
               onLoad={event => {
-                console.log("loaded");
-                // var elm = event.target;
-                // var newOne = elm.cloneNode(true);
-                // elm.parentNode.replaceChild(newOne, elm);
-
-                // event.target.classList.remove("fade-in");
                 event.target.classList.add("fade-in");
               }}
-              ref={imgRef}
               src={item}
               alt="chair-pose"
             />

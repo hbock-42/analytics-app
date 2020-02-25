@@ -112,17 +112,23 @@ export const StyledItemViewer = styled.div`
       user-select: none;
       transition: transform 1s, color 0.2s;
       :hover {
-        color: grey;
+        color: #525252;
       }
     }
 
     .page-number-selected {
       transform: scale(2);
     }
+
     .arrow-div {
       padding: 0 3px;
       .arrow-icon {
         width: 10px;
+      }
+
+      transition: transform 0.2s;
+      :hover {
+        transform: scale(1.5);
       }
     }
 
