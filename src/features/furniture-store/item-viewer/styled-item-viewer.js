@@ -111,9 +111,30 @@ export const StyledItemViewer = styled.div`
     .page-number-selected {
       transform: scale(2);
     }
+    .arrow-div {
+      padding: 0 3px;
+      .arrow-icon {
+        width: 10px;
+      }
+    }
 
     .button-div {
       padding: 4px;
+    }
+  }
+
+  .social-media {
+    z-index: 1;
+    position: absolute;
+    left: 5%;
+    top: 50%;
+    display: flex;
+    flex-direction: column;
+    transform: translateY(-50%);
+
+    img {
+      width: 13px;
+      margin: 10px 0;
     }
   }
 `;

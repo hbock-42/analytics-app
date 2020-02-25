@@ -31,9 +31,6 @@ const ItemViewer = () => {
               className={classNames(
                 "item",
                 { "selected-item": i === currentId },
-                // { "left-item": i === currentId - 1 },
-                // { "right-item": i === currentId + 1 },
-                // { "hidden-item": i < currentId - 1 || i > currentId + 1 }
                 { "left-item": i < currentId },
                 { "right-item": i > currentId }
               )}
@@ -65,8 +62,35 @@ const ItemViewer = () => {
               </p>
             </div>
           ))}
+          <div
+            className="arrow-div"
+            onClick={event =>
+              setCurrentId(
+                currentId < chairImages.length - 1 ? currentId + 1 : currentId
+              )
+            }
+          >
+            <img
+              className="arrow-icon"
+              src={require("../../../assets/images/furniture-store/icons/next.png")}
+              alt="next"
+            />
+          </div>
         </div>
-        <div className="social-media"></div>
+        <div className="social-media">
+          <img
+            src={require("../../../assets/images/furniture-store/icons/facebook.png")}
+            alt="facebook"
+          />
+          <img
+            src={require("../../../assets/images/furniture-store/icons/instagram.png")}
+            alt="instagram"
+          />
+          <img
+            src={require("../../../assets/images/furniture-store/icons/linkedin.png")}
+            alt="linkedin"
+          />
+        </div>
       </div>
     </StyledItemViewer>
   );
