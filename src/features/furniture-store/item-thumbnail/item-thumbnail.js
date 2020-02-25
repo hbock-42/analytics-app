@@ -2,14 +2,14 @@ import React from "react";
 import { StyledItemThumbnail } from "./styled-item-thumbnail";
 import { useSelector, useDispatch } from "react-redux";
 
-const ItemThumbnail = ({ chairImages }) => {
+const ItemThumbnail = ({ chairs }) => {
   const modelId = useSelector(state => state.furniture.modelId);
   const modelPose = useSelector(state => state.furniture.modelPose);
   const dispatch = useDispatch();
   return (
     <StyledItemThumbnail>
       <div className="thumbnail-container">
-        {chairImages[modelId].map((item, i) => (
+        {chairs[modelId].images.map((item, i) => (
           <div
             key={i}
             onClick={event =>

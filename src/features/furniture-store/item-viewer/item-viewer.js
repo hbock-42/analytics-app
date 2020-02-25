@@ -2,11 +2,10 @@ import React from "react";
 import { StyledItemViewer } from "./styled-item-viewer";
 import { useSelector, useDispatch } from "react-redux";
 
-const ItemViewer = ({ chairImages }) => {
+const ItemViewer = ({ chairs }) => {
   const modelId = useSelector(state => state.furniture.modelId);
   const modelPose = useSelector(state => state.furniture.modelPose);
   const dispatch = useDispatch();
-  //   const currentPose = 0;
   var classNames = require("classnames");
 
   return (
@@ -21,26 +20,30 @@ const ItemViewer = ({ chairImages }) => {
           <h4>Galimberti</h4>
         </div>
         <div className="content">
-          {chairImages.map((item, i) =>
-            item.map((pose, j) => (
-              <img
-                key={i + "-" + j}
-                className={classNames(
-                  "item",
-                  { "selected-item": i === modelId },
-                  { "hidden-pose": i === modelId && j !== modelPose },
-                  { "left-item": i < modelId },
-                  { "right-item": i > modelId }
-                )}
-                src={item[j]}
-                alt="chair"
-              />
-            ))
+          {chairs.map((item, i) =>
+            item.images.map((pose, j) => {
+              console.log("SRC = " + item[j]);
+
+              return (
+                <img
+                  key={i + "-" + j}
+                  className={classNames(
+                    "item",
+                    { "selected-item": i === modelId },
+                    { "hidden-pose": i === modelId && j !== modelPose },
+                    { "left-item": i < modelId },
+                    { "right-item": i > modelId }
+                  )}
+                  src={item.images[j]}
+                  alt="chair"
+                />
+              );
+            })
           )}
         </div>
         <div className="page-selector">
           <div className="black-bar" />
-          {chairImages.map((item, i) => (
+          {chairs.map((item, i) => (
             <div
               className="button-div"
               key={i}
@@ -68,8 +71,7 @@ const ItemViewer = ({ chairImages }) => {
             onClick={event =>
               dispatch({
                 type: "SELECT_ITEM",
-                payload:
-                  modelId < chairImages.length - 1 ? modelId + 1 : modelId
+                payload: modelId < chairs.length - 1 ? modelId + 1 : modelId
               })
             }
           >
