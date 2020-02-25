@@ -149,6 +149,11 @@ export const StyledItemViewer = styled.div`
     img {
       width: 13px;
       margin: 10px 0;
+
+      transition: transform 0.2s;
+      :hover {
+        transform: scale(1.5);
+      }
     }
   }
 `;
