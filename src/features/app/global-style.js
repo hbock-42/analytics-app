@@ -130,5 +130,9 @@ export const GlobalStyle = createGlobalStyle`
     height: 5em;
   }
 }
+/* upper-case */
+.upper-case {
+  text-transform: uppercase;
+}
 
 `;

@@ -2,6 +2,7 @@ import React from "react";
 import { StyledItem } from "./styled-item";
 import ItemViewer from "./item-viewer/item-viewer";
 import ItemThumbnail from "./item-thumbnail/item-thumbnail";
+import ItemInfos from "./item-infos/item-infos";
 
 const chairs = [
   {
@@ -57,8 +58,11 @@ const chairs = [
 const Item = () => {
   return (
     <StyledItem>
-      <ItemViewer id="item-viewer" chairs={chairs} />
-      <ItemThumbnail id="item-thumbnail" chairs={chairs} />
+      <ItemViewer chairs={chairs} />
+      <div className="right-elem">
+        <ItemThumbnail chairs={chairs} />
+        <ItemInfos chairs={chairs} />
+      </div>
     </StyledItem>
   );
 };
