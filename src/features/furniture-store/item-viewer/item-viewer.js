@@ -1,16 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import { StyledItemViewer } from "./styled-item-viewer";
+import { useSelector, useDispatch } from "react-redux";
 
-const chairImages = [
-  require("../../../assets/images/furniture-store/armchairs/1/pose-1/armchair-blue.jpg"),
-  require("../../../assets/images/furniture-store/armchairs/1/pose-1/armchair-brown.jpg"),
-  require("../../../assets/images/furniture-store/armchairs/1/pose-1/armchair-brown.jpg"),
-  require("../../../assets/images/furniture-store/armchairs/1/pose-1/armchair-brown.jpg"),
-  require("../../../assets/images/furniture-store/armchairs/1/pose-1/armchair-orange.jpg")
-];
-
-const ItemViewer = () => {
-  const [currentId, setCurrentId] = useState(0);
+const ItemViewer = ({ chairImages }) => {
+  const modelId = useSelector(state => state.furniture.modelId);
+  const modelPose = useSelector(state => state.furniture.modelPose);
+  const dispatch = useDispatch();
+  //   const currentPose = 0;
   var classNames = require("classnames");
 
   return (
@@ -25,19 +21,22 @@ const ItemViewer = () => {
           <h4>Galimberti</h4>
         </div>
         <div className="content">
-          {chairImages.map((item, i) => (
-            <img
-              key={i}
-              className={classNames(
-                "item",
-                { "selected-item": i === currentId },
-                { "left-item": i < currentId },
-                { "right-item": i > currentId }
-              )}
-              src={item}
-              alt="chair"
-            />
-          ))}
+          {chairImages.map((item, i) =>
+            item.map((pose, j) => (
+              <img
+                key={i + "-" + j}
+                className={classNames(
+                  "item",
+                  { "selected-item": i === modelId },
+                  { "hidden-pose": i === modelId && j !== modelPose },
+                  { "left-item": i < modelId },
+                  { "right-item": i > modelId }
+                )}
+                src={item[j]}
+                alt="chair"
+              />
+            ))
+          )}
         </div>
         <div className="page-selector">
           <div className="black-bar" />
@@ -46,14 +45,16 @@ const ItemViewer = () => {
               className="button-div"
               key={i}
               onClick={event =>
-                setCurrentId(
-                  parseInt(event.currentTarget.firstChild.textContent) - 1
-                )
+                dispatch({
+                  type: "SELECT_ITEM",
+                  payload:
+                    parseInt(event.currentTarget.firstChild.textContent) - 1
+                })
               }
             >
               <p
                 className={classNames("page-number", {
-                  "page-number-selected": i === currentId
+                  "page-number-selected": i === modelId
                 })}
                 src={item}
                 alt="chair"
@@ -65,9 +66,11 @@ const ItemViewer = () => {
           <div
             className="arrow-div"
             onClick={event =>
-              setCurrentId(
-                currentId < chairImages.length - 1 ? currentId + 1 : currentId
-              )
+              dispatch({
+                type: "SELECT_ITEM",
+                payload:
+                  modelId < chairImages.length - 1 ? modelId + 1 : modelId
+              })
             }
           >
             <img

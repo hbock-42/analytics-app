@@ -7,7 +7,7 @@ import MenuShortcut from "./features/menu-shortcut/menu-shortcut";
 import { GlobalStyle } from "./features/app/global-style";
 import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 import TestRedux from "./features/furniture-store/test-redux";
-import ItemViewer from "./features/furniture-store/item-viewer/item-viewer";
+import Item from "./features/furniture-store/item";
 
 const Routing = () => (
   <Router>
@@ -17,7 +17,7 @@ const Routing = () => (
       <Route path="/clock" component={Clock} />
       <Route path="/posts" component={Posts} />
       <Route path="/testredux" component={TestRedux} />
-      <Route path="/shop" component={ItemViewer} />
+      <Route path="/shop" component={Item} />
       <Route component={Home} />
     </Switch>
     <GlobalStyle />

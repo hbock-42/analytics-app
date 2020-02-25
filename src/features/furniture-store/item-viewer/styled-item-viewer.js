@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const StyledItemViewer = styled.div`
   /* debug values */
-  width: 50%;
+  /* width: 80%; */
 
   /* real value */
   background-color: white;
@@ -79,6 +79,11 @@ export const StyledItemViewer = styled.div`
 
     .hidden-item {
       display: none;
+    }
+
+    .hidden-pose {
+      z-index: 0;
+      transform: scale(0);
     }
   }
 
