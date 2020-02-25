@@ -22,8 +22,6 @@ const ItemViewer = ({ chairs }) => {
         <div className="content">
           {chairs.map((item, i) =>
             item.images.map((pose, j) => {
-              console.log("SRC = " + item[j]);
-
               return (
                 <img
                   key={i + "-" + j}

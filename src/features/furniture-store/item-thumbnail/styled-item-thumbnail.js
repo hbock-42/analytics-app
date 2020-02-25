@@ -1,6 +1,9 @@
 import styled from "styled-components";
 
 export const StyledItemThumbnail = styled.div`
+  background-color: ${props => props.backgroundColor};
+  transition: background-color 1s;
+
   .thumbnail-container {
     display: flex;
     justify-content: center;
@@ -30,5 +33,18 @@ export const StyledItemThumbnail = styled.div`
         transform: scale(1.2);
       }
     }
+  }
+
+  @keyframes fadein {
+    from {
+      opacity: 0.3;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  .fade-in {
+    animation: fadein 1s ease;
   }
 `;

@@ -110,7 +110,10 @@ export const StyledItemViewer = styled.div`
     .page-number {
       font-size: 12px;
       user-select: none;
-      transition: transform 1s;
+      transition: transform 1s, color 0.2s;
+      :hover {
+        color: grey;
+      }
     }
 
     .page-number-selected {
