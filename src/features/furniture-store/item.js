@@ -30,6 +30,51 @@ const chairImages = [
   ]
 ];
 
+const chairs = [
+  {
+    info: "Luchitino blue Armchair by Rodrigo",
+    images: [
+      require("../../assets/images/furniture-store/armchairs/1/pose-1/armchair-blue.jpg"),
+      require("../../assets/images/furniture-store/armchairs/1/pose-2/armchair-blue.jpg")
+    ]
+  },
+  {
+    info: "Luchitino red Armchair by Rodrigo",
+    images: [
+      require("../../assets/images/furniture-store/armchairs/1/pose-1/armchair-blue.jpg"),
+      require("../../assets/images/furniture-store/armchairs/1/pose-2/armchair-blue.jpg")
+    ]
+  },
+  {
+    info: "Luchitino orange Armchair by Rodrigo",
+    images: [
+      require("../../assets/images/furniture-store/armchairs/1/pose-1/armchair-blue.jpg"),
+      require("../../assets/images/furniture-store/armchairs/1/pose-2/armchair-blue.jpg")
+    ]
+  },
+  {
+    info: "Ein Kartofel green Armchair by Hans Zimmer",
+    images: [
+      require("../../assets/images/furniture-store/armchairs/1/pose-1/armchair-brown.jpg"),
+      require("../../assets/images/furniture-store/armchairs/1/pose-2/armchair-brown.jpg")
+    ]
+  },
+  {
+    info: "Ein Kartofel orange Armchair by Hans Zimmer",
+    images: [
+      require("../../assets/images/furniture-store/armchairs/1/pose-1/armchair-brown.jpg"),
+      require("../../assets/images/furniture-store/armchairs/1/pose-2/armchair-brown.jpg")
+    ]
+  },
+  {
+    info: "Ein Kartofel yellow Armchair by Hans Zimmer",
+    images: [
+      require("../../assets/images/furniture-store/armchairs/1/pose-1/armchair-brown.jpg"),
+      require("../../assets/images/furniture-store/armchairs/1/pose-2/armchair-brown.jpg")
+    ]
+  }
+];
+
 const Item = () => {
   return (
     <StyledItem>

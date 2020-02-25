@@ -21,7 +21,14 @@ export const StyledItemThumbnail = styled.div`
       display: block;
       margin: 8% auto;
       width: 120%;
+
+      transition: transform 0.5s;
       transform: translateX(-10%);
+      transform-origin: right center;
+
+      :hover {
+        transform: scale(1.2);
+      }
     }
   }
 `;
